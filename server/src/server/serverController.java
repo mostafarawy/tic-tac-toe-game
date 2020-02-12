@@ -5,7 +5,6 @@
  */
 package server;
 
-import static java.awt.Color.red;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -15,14 +14,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
-import javafx.scene.paint.Color;
 
 /**
  * FXML Controller class
  *
  * @author Mohamed Ibrahim
  */
-public class ServerController implements Initializable {
+public class serverController implements Initializable {
 
     @FXML
     private Button TurnOn;

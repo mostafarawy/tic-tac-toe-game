@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="613.0" prefWidth="982.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="server.ServerController">
+<AnchorPane id="AnchorPane" prefHeight="613.0" prefWidth="982.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="server.serverController">
     <stylesheets>
         <URL value="@/Style/style.css" />
     </stylesheets>
@@ -51,7 +51,7 @@
       </Pane>
       <Pane layoutX="473.0" prefHeight="613.0" prefWidth="510.0">
          <children>
-            <TextArea fx:id="tfuser" layoutX="31.0" layoutY="75.0" prefHeight="463.0" prefWidth="448.0" promptText="Online user" />
+            <TextArea fx:id="tfuser" layoutX="31.0" layoutY="40.0" prefHeight="534.0" prefWidth="448.0" promptText="Server log" />
          </children>
       </Pane>
    </children>

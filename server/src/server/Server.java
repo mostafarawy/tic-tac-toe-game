@@ -11,6 +11,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  *
@@ -23,7 +24,7 @@ public class Server extends Application {
         Parent Server = FXMLLoader.load(getClass().getResource("Server.fxml"));
         
         Scene scene = new Scene(Server);
-        
+        stage.initStyle(StageStyle.UNDECORATED);
         stage.setScene(scene);
         stage.show();
     }

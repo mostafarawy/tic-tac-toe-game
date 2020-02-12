@@ -23,7 +23,7 @@ public class multi_Player extends Application {
         Parent multi_Player = FXMLLoader.load(getClass().getResource("multi_Player.fxml"));
         
         Scene scene = new Scene(multi_Player);
-        
+//        stage.initStyle(StageStyle.UNDECORATED);   
         stage.setScene(scene);
         stage.show();
     }

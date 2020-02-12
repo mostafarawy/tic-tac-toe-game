@@ -22,7 +22,7 @@ public class single_Player extends Application {
         Parent single_Player = FXMLLoader.load(getClass().getResource("single_Player.fxml"));
         
         Scene scene = new Scene(single_Player);
-        
+//        stage.initStyle(StageStyle.UNDECORATED);
         stage.setScene(scene);
         stage.show();
     }
