@@ -77,17 +77,17 @@
                   <Font name="System Bold" size="36.0" />
                </font>
             </Label>
-            <Label fx:id="Player2_name" layoutX="64.0" layoutY="386.0" text="Player 2" textFill="#ffffffd1" textOverrun="WORD_ELLIPSIS">
+            <Label fx:id="Computer" layoutX="59.0" layoutY="386.0" text="Computer" textFill="#ffffffd1" textOverrun="WORD_ELLIPSIS">
                <font>
                   <Font name="System Bold" size="36.0" />
                </font>
             </Label>
-            <Label fx:id="player2_simple" layoutX="260.0" layoutY="386.0" text="O" textFill="#ffffffd1" textOverrun="WORD_ELLIPSIS">
+            <Label fx:id="Computer_simple" layoutX="260.0" layoutY="386.0" text="O" textFill="#ffffffd1" textOverrun="WORD_ELLIPSIS">
                <font>
                   <Font name="System Bold" size="36.0" />
                </font>
             </Label>
-            <Label fx:id="player2_score" layoutX="185.0" layoutY="439.0" text="0" textFill="#ffffffd1" textOverrun="WORD_ELLIPSIS">
+            <Label fx:id="Computer_score" layoutX="185.0" layoutY="439.0" text="0" textFill="#ffffffd1" textOverrun="WORD_ELLIPSIS">
                <font>
                   <Font name="System Bold" size="36.0" />
                </font>

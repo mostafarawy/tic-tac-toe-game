@@ -15,13 +15,14 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 
 /**
+ * FXML Controller class
  *
  * @author Mohamed Ibrahim
  */
-public class single_PlayerController implements Initializable {
-    
+public class multi_PlayerController implements Initializable {
+
     @FXML
-    private Label label;
+    private Pane gameUi;
     @FXML
     private Button bt1;
     @FXML
@@ -41,30 +42,35 @@ public class single_PlayerController implements Initializable {
     @FXML
     private Button bt9;
     @FXML
-    private Button exit;
-    @FXML
-    private Pane gameUi;
-    @FXML
     private Pane userUi;
+    @FXML
+    private Label Player1_name;
     @FXML
     private Label player1_simple;
     @FXML
     private Label player1_score;
     @FXML
-    private Label Player1_name;
+    private Label Player2_name;
     @FXML
-    private Label Computer;
+    private Label player2_simple;
     @FXML
-    private Label Computer_simple;
+    private Label player2_score;
     @FXML
-    private Label Computer_score;
-    
+    private Button exit;
+    @FXML
+    private Label label;
 
-
+    /**
+     * Initializes the controller class.
+     */
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+    }    
 
     @FXML
     private void ButtonAction(ActionEvent event) {
-        if(event.getSource()==exit){
+         if(event.getSource()==exit){
             System.exit(0);
         }
 
@@ -98,15 +104,6 @@ public class single_PlayerController implements Initializable {
         
         if(event.getSource()==bt9){
         }
-        
-        
-       
-
     }
-    
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
     
 }
