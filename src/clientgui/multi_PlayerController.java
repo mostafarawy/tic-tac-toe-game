@@ -5,13 +5,16 @@
  */
 package clientgui;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 
 /**
@@ -59,6 +62,11 @@ public class multi_PlayerController implements Initializable {
     private Button exit;
     @FXML
     private Label label;
+    @FXML
+    private Button back;
+  
+    @FXML
+    private AnchorPane multi_player;
 
     /**
      * Initializes the controller class.
@@ -69,9 +77,14 @@ public class multi_PlayerController implements Initializable {
     }    
 
     @FXML
-    private void ButtonAction(ActionEvent event) {
-         if(event.getSource()==exit){
+    private void ButtonAction(ActionEvent event) throws IOException {
+        if(event.getSource()==exit){
             System.exit(0);
+        }
+        
+        if(event.getSource()==back){
+            AnchorPane pane=FXMLLoader.load(getClass().getResource("main.fxml"));
+            multi_player.getChildren().setAll(pane);
         }
 
 //         gameUi.toFront();

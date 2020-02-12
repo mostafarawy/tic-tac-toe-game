@@ -5,13 +5,16 @@
  */
 package clientgui;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 
 /**
@@ -58,14 +61,23 @@ public class single_PlayerController implements Initializable {
     private Label Computer_simple;
     @FXML
     private Label Computer_score;
+    @FXML
+    private AnchorPane single_player;
+    @FXML
+    private Button back;
     
 
 
 
     @FXML
-    private void ButtonAction(ActionEvent event) {
+    private void ButtonAction(ActionEvent event) throws IOException {
         if(event.getSource()==exit){
             System.exit(0);
+        }
+        
+         if(event.getSource()==back){
+            AnchorPane pane=FXMLLoader.load(getClass().getResource("main.fxml"));
+            single_player.getChildren().setAll(pane);
         }
 
 //         gameUi.toFront();

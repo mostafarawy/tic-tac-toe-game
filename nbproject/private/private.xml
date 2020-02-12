@@ -3,12 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/ITI/Java/Advanced%20Java/Project/tic-tac-toe-game/src/clientgui/single_PlayerController.java</file>
-            <file>file:/D:/ITI/Java/Advanced%20Java/Project/tic-tac-toe-game/src/clientgui/multi_Player.java</file>
-            <file>file:/D:/ITI/Java/Advanced%20Java/Project/tic-tac-toe-game/src/clientgui/single_Player.java</file>
-            <file>file:/D:/ITI/Java/Advanced%20Java/Project/tic-tac-toe-game/src/server/Server.fxml</file>
-            <file>file:/D:/ITI/Java/Advanced%20Java/Project/tic-tac-toe-game/src/server/Server.java</file>
-            <file>file:/D:/ITI/Java/Advanced%20Java/Project/tic-tac-toe-game/src/server/ServerController.java</file>
+            <file>file:/D:/ITI/Java/Advanced%20Java/Project/tic-tac-toe-game/src/clientgui/main.java</file>
+            <file>file:/D:/ITI/Java/Advanced%20Java/Project/tic-tac-toe-game/src/clientgui/MainController.java</file>
+            <file>file:/D:/ITI/Java/Advanced%20Java/Project/tic-tac-toe-game/src/clientgui/signIn_signUp.fxml</file>
+            <file>file:/D:/ITI/Java/Advanced%20Java/Project/tic-tac-toe-game/src/clientgui/SignIn_signUpController.java</file>
         </group>
     </open-files>
 </project-private>
