@@ -8,7 +8,14 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="client.jar" size="4891214" download="eager" />
+    <jar href="client.jar" size="8129088" download="eager" />
+    <jar href="lib\controlsfx-8.40.13.jar" size="1213306" download="eager" />
+    <jar href="lib\gson-2.8.0-javadoc.jar" size="261988" download="eager" />
+    <jar href="lib\gson-2.8.0-sources.jar" size="146908" download="eager" />
+    <jar href="lib\gson-2.8.0.jar" size="231952" download="eager" />
+    <jar href="lib\gson-2.8.2.jar" size="232932" download="eager" />
+    <jar href="lib\jackson-mapper-asl.jar" size="607067" download="eager" />
+    <jar href="lib\json-simple-1.1.jar" size="16046" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="client" >
     <param name="requiredFXVersion" value="8.0+"/>

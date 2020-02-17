@@ -2,10 +2,15 @@
 
 <?import java.net.URL?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" fx:id="main" prefHeight="613.0" prefWidth="982.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientgui.MainController">
@@ -13,28 +18,487 @@
         <URL value="@../Style/style.css" />
     </stylesheets>
    <children>
-      <Pane prefHeight="613.0" prefWidth="984.0" styleClass="linear-grd" stylesheets="@../Style/style.css">
+      <AnchorPane id="AnchorPane" fx:id="login_reg" layoutY="1.0" prefHeight="622.0" prefWidth="982.0">
          <children>
-            <ImageView fitHeight="514.0" fitWidth="517.0" layoutX="235.0" layoutY="50.0" opacity="0.24" pickOnBounds="true" preserveRatio="true">
+            <StackPane layoutX="486.0" prefHeight="622.0" prefWidth="498.0">
+               <children>
+                  <Pane fx:id="signUp" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffff;">
+                     <children>
+                        <TextField fx:id="tfusername_signUp" layoutX="92.0" layoutY="239.0" prefHeight="48.0" prefWidth="315.0" promptText="User Name" />
+                        <PasswordField fx:id="tfpass_signUp" layoutX="91.0" layoutY="319.0" prefHeight="48.0" prefWidth="317.0" promptText="Password" />
+                        <Button fx:id="btnSignUp" layoutX="288.0" layoutY="398.0" mnemonicParsing="false" onAction="#login_regButtonAction" prefHeight="35.0" prefWidth="120.0" styleClass="button1" stylesheets="@../Style/style.css" text="SignUp" />
+                        <Label layoutX="91.0" layoutY="181.0" style="-fx-background-color: #ffff;" text="Sign Up">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <ImageView fx:id="backicon" fitHeight="64.0" fitWidth="66.0" layoutX="27.0" layoutY="26.0" onMouseClicked="#login_regMouseEvent" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/back.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="signIn" prefHeight="634.0" prefWidth="498.0" style="-fx-background-color: #ffff;">
+                     <children>
+                        <TextField fx:id="tfusername_login" layoutX="92.0" layoutY="153.0" prefHeight="48.0" prefWidth="315.0" promptText="User Name" />
+                        <PasswordField fx:id="tfPass_login" layoutX="91.0" layoutY="229.0" prefHeight="48.0" prefWidth="317.0" promptText="Password" />
+                        <Button fx:id="btnSignIn" layoutX="288.0" layoutY="308.0" mnemonicParsing="false" onAction="#login_regButtonAction" prefHeight="35.0" prefWidth="120.0" styleClass="button1" stylesheets="@../Style/style.css" text="Sign In" />
+                        <Button fx:id="SignUp" layoutX="91.0" layoutY="445.0" mnemonicParsing="false" onAction="#login_regButtonAction" prefHeight="64.0" prefWidth="317.0" styleClass="button2" stylesheets="@../Style/style.css" text="Don't have an account? Sign up" />
+                        <Label layoutX="91.0" layoutY="105.0" style="-fx-background-color: #ffff;" text="Sign In">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <ImageView fx:id="mainicon" fitHeight="64.0" fitWidth="66.0" layoutX="218.0" layoutY="526.0" onMouseClicked="#login_regMouseEvent" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/home.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </children>
+            </StackPane>
+            <Pane prefHeight="622.0" prefWidth="488.0" styleClass="linear-grd" stylesheets="@../Style/style.css">
+               <children>
+                  <ImageView fitHeight="619.0" fitWidth="679.0" layoutX="-131.0" layoutY="2.0" opacity="0.57" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/hobbies-and-free-time.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="test1" layoutX="202.0" layoutY="40.0" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="test2" layoutX="202.0" layoutY="75.0" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="ip" layoutX="87.0" layoutY="242.0" prefHeight="48.0" prefWidth="315.0" promptText="IP Address" />
+                  <TextField fx:id="socket" layoutX="87.0" layoutY="318.0" prefHeight="48.0" prefWidth="315.0" promptText="Socket" />
+                  <Label layoutX="130.0" layoutY="192.0" text="Server connection" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="27.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="connect" layoutX="187.0" layoutY="400.0" mnemonicParsing="false" onAction="#login_regButtonAction" prefHeight="48.0" prefWidth="114.0" styleClass="button2" text="Connect" />
+               </children></Pane>
+         </children>
+      </AnchorPane>
+      <AnchorPane id="AnchorPane" fx:id="online_user" layoutX="-2.0" layoutY="2.0" prefHeight="622.0" prefWidth="982.0">
+         <children>
+            <Pane prefHeight="622.0" prefWidth="982.0" styleClass="linear-grd" stylesheets="@../Style/style.css">
+               <children>
+                  <Button fx:id="invite" layoutX="61.0" layoutY="405.0" mnemonicParsing="false" onAction="#Onlineuser_ButtonAction" prefHeight="60.0" prefWidth="142.0" styleClass="button2" text="Invite" />
+                  <Button fx:id="online_back" layoutX="203.0" layoutY="485.0" mnemonicParsing="false" onAction="#Onlineuser_ButtonAction" prefHeight="60.0" prefWidth="142.0" styleClass="button2" text="Back" />
+                  <Button fx:id="refresh" layoutX="345.0" layoutY="405.0" mnemonicParsing="false" onAction="#Onlineuser_ButtonAction" prefHeight="60.0" prefWidth="142.0" styleClass="button2" text="Refresh" />
+                  <ImageView fitHeight="732.0" fitWidth="430.0" layoutX="552.0" layoutY="-11.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/pngtree-year-end-party-year-end-trophy-champion-image_47741.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="61.0" layoutY="32.0" text="User Name" textFill="#ffe9cf">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="246.0" layoutY="32.0" text="Score" textFill="#ffe9cf">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Ouser1" layoutX="90.0" layoutY="85.0" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Ouser2" layoutX="90.0" layoutY="127.0" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Ouser3" layoutX="90.0" layoutY="172.0" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Ouser4" layoutX="90.0" layoutY="215.0" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Ouser5" layoutX="90.0" layoutY="254.0" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Oscore1" layoutX="246.0" layoutY="85.0" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Oscore2" layoutX="246.0" layoutY="127.0" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Oscore3" layoutX="246.0" layoutY="172.0" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Oscore4" layoutX="246.0" layoutY="215.0" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Oscore5" layoutX="246.0" layoutY="254.0" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="Oinvite1" layoutX="384.0" layoutY="87.0" mnemonicParsing="false" onAction="#Onlineuser_ButtonAction" styleClass="button1" text="Invite" />
+                  <Button fx:id="Oinvite2" layoutX="384.0" layoutY="129.0" mnemonicParsing="false" onAction="#Onlineuser_ButtonAction" styleClass="button1" text="Invite" />
+                  <Button fx:id="Oinvite3" layoutX="384.0" layoutY="174.0" mnemonicParsing="false" onAction="#Onlineuser_ButtonAction" styleClass="button1" text="Invite" />
+                  <Button fx:id="Oinvite4" layoutX="384.0" layoutY="217.0" mnemonicParsing="false" onAction="#Onlineuser_ButtonAction" styleClass="button1" text="Invite" />
+                  <Button fx:id="Oinvite5" layoutX="384.0" layoutY="256.0" mnemonicParsing="false" onAction="#Onlineuser_ButtonAction" styleClass="button1" text="Invite" />
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <AnchorPane id="AnchorPane" fx:id="multi_player" layoutX="-4.0" layoutY="3.0" prefHeight="622.0" prefWidth="982.0" styleClass="mainFxmlClass">
+         <stylesheets>
+            <URL value="@../Style/style.css" />
+         </stylesheets>
+         <children>
+            <Pane fx:id="game_end_m" layoutX="101.0" layoutY="81.0" prefHeight="472.0" prefWidth="430.0" styleClass="linear-grd" stylesheets="@../Style/style.css">
+               <children>
+                  <Label fx:id="gameEnd_m" layoutX="164.0" layoutY="47.0" prefHeight="70.0" prefWidth="103.0" text="Label" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="play_again_m" layoutX="131.0" layoutY="166.0" mnemonicParsing="false" onAction="#multi_ButtonAction" prefHeight="70.0" prefWidth="168.0" styleClass="button1" text="Play Again">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="gameBack_m" layoutX="131.0" layoutY="262.0" mnemonicParsing="false" onAction="#multi_ButtonAction" prefHeight="70.0" prefWidth="168.0" styleClass="button2" text="Back" />
+                  <Button fx:id="gameExit_m" layoutX="132.0" layoutY="348.0" mnemonicParsing="false" onAction="#multi_ButtonAction" prefHeight="70.0" prefWidth="168.0" styleClass="button2" text="Exit" />
+               </children>
+            </Pane>
+            <Pane fx:id="gameUi_m" layoutY="-1.0" prefHeight="622.0" prefWidth="634.0" style="-fx-background-color: #ffffff;" stylesheets="@../Style/style.css">
+               <children>
+                  <ImageView fitHeight="604.0" fitWidth="614.0" layoutX="4.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" styleClass="button2">
+                     <image>
+                        <Image url="@../img/board.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="bt1_m" layoutX="7.0" layoutY="8.0" mnemonicParsing="false" onAction="#multi_ButtonAction" prefHeight="191.0" prefWidth="183.0" style="-fx-background-color: #ffffff;" stylesheets="@../Style/style.css">
+                     <font>
+                         <Font name="System Bold" size="72.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="bt2_m" layoutX="218.0" layoutY="8.0" mnemonicParsing="false" onAction="#multi_ButtonAction" prefHeight="191.0" prefWidth="174.0" style="-fx-background-color: #ffffff;">
+                     <font>
+                         <Font name="System Bold" size="72.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="bt3_m" layoutX="420.0" layoutY="8.0" mnemonicParsing="false" onAction="#multi_ButtonAction" prefHeight="191.0" prefWidth="183.0" style="-fx-background-color: #ffffff;">
+                     <font>
+                         <Font name="System Bold" size="72.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="bt4_m" layoutX="6.0" layoutY="220.0" mnemonicParsing="false" onAction="#multi_ButtonAction" prefHeight="177.0" prefWidth="183.0" style="-fx-background-color: #ffffff;">
+                     <font>
+                         <Font name="System Bold" size="72.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="bt5_m" layoutX="219.0" layoutY="226.0" mnemonicParsing="false" onAction="#multi_ButtonAction" prefHeight="177.0" prefWidth="174.0" style="-fx-background-color: #ffffff;">
+                     <font>
+                         <Font name="System Bold" size="72.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="bt6_m" layoutX="418.0" layoutY="221.0" mnemonicParsing="false" onAction="#multi_ButtonAction" prefHeight="177.0" prefWidth="193.0" style="-fx-background-color: #ffffff;">
+                     <font>
+                         <Font name="System Bold" size="72.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="bt7_m" layoutX="9.0" layoutY="422.0" mnemonicParsing="false" onAction="#multi_ButtonAction" prefHeight="191.0" prefWidth="183.0" style="-fx-background-color: #ffffff;">
+                     <font>
+                         <Font name="System Bold" size="72.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="bt8_m" layoutX="220.0" layoutY="427.0" mnemonicParsing="false" onAction="#multi_ButtonAction" prefHeight="184.0" prefWidth="168.0" style="-fx-background-color: #ffffff;">
+                     <font>
+                         <Font name="System Bold" size="72.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="bt9_m" layoutX="415.0" layoutY="425.0" mnemonicParsing="false" onAction="#multi_ButtonAction" prefHeight="184.0" prefWidth="193.0" style="-fx-background-color: #ffffff;">
+                     <font>
+                         <Font name="System Bold" size="72.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane fx:id="userUi_m" layoutX="634.0" layoutY="-1.0" prefHeight="622.0" prefWidth="352.0" styleClass="linear-grd" stylesheets="@../Style/style.css">
+               <children>
+                  <ImageView fitHeight="97.0" fitWidth="60.0" layoutX="144.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/vs2.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="Player1_name_m" layoutX="24.0" layoutY="1.0" text="Player 1" textFill="#ffffffd1" textOverrun="WORD_ELLIPSIS">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="player1_simple_m" layoutX="213.0" layoutY="1.0" text="X" textFill="#ffffffd1" textOverrun="WORD_ELLIPSIS">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="player1_score_m" layoutX="277.0" layoutY="1.0" text="0" textFill="#ffffffd1" textOverrun="WORD_ELLIPSIS">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Player2_name_m" layoutX="24.0" layoutY="114.0" text="Player 2" textFill="#ffffffd1" textOverrun="WORD_ELLIPSIS">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="player2_simple_m" layoutX="211.0" layoutY="114.0" text="O" textFill="#ffffffd1" textOverrun="WORD_ELLIPSIS">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="player2_score_m" layoutX="277.0" layoutY="114.0" text="0" textFill="#ffffffd1" textOverrun="WORD_ELLIPSIS">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="exit_m" layoutX="187.0" layoutY="168.0" mnemonicParsing="false" onAction="#multi_ButtonAction" prefHeight="53.0" prefWidth="136.0" styleClass="button2" text="Exit">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="back_m" layoutX="29.0" layoutY="168.0" mnemonicParsing="false" onAction="#multi_ButtonAction" prefHeight="53.0" prefWidth="136.0" styleClass="button1" text="Back">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="chat_inputText" layoutX="21.0" layoutY="580.0" onKeyPressed="#Multi_keyAction" prefHeight="31.0" prefWidth="220.0" />
+                  <Button fx:id="send_m" layoutX="151.0" layoutY="244.0" mnemonicParsing="false" onAction="#multi_ButtonAction" prefHeight="31.0" prefWidth="73.0" styleClass="button1" text="Send" />
+                  <TextArea fx:id="chat_textarea" layoutX="21.0" layoutY="293.0" prefHeight="282.0" prefWidth="310.0" />
+                  <Button fx:id="pause" layoutX="108.0" layoutY="233.0" mnemonicParsing="false" onAction="#multi_ButtonAction" prefHeight="53.0" prefWidth="136.0" styleClass="button2" text="Pause">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="chat_btn" layoutX="251.0" layoutY="580.0" mnemonicParsing="false" onAction="#multi_ButtonAction" prefHeight="31.0" prefWidth="73.0" styleClass="button1" text="Send" />
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <AnchorPane id="AnchorPane" fx:id="invitation" layoutX="1.0" layoutY="4.0" prefHeight="622.0" prefWidth="982.0" stylesheets="@../Style/style.css">
+         <children>
+            <Pane layoutX="-1.0" layoutY="-4.0" prefHeight="622.0" prefWidth="288.0" styleClass="linear-grd" stylesheets="@../Style/style.css">
+               <children>
+                  <ImageView fitHeight="312.0" fitWidth="244.0" layoutX="22.0" layoutY="187.0" opacity="0.45" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/hobbies-and-free-time.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="694.0" prefHeight="622.0" prefWidth="288.0" styleClass="linear-grd" stylesheets="@../Style/style.css">
+               <children>
+                  <ImageView fitHeight="312.0" fitWidth="244.0" layoutX="25.0" layoutY="193.0" opacity="0.45" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/hobbies-and-free-time.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Label fx:id="invite_text" layoutX="345.0" layoutY="150.0" text="Mohamed Challenges you">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Button fx:id="accept" layoutX="345.0" layoutY="264.0" mnemonicParsing="false" onAction="#invite_ButtonAction" prefHeight="61.0" prefWidth="140.0" styleClass="button1" text="Accept" />
+            <Button fx:id="decline" layoutX="498.0" layoutY="264.0" mnemonicParsing="false" onAction="#invite_ButtonAction" prefHeight="61.0" prefWidth="140.0" styleClass="button2" text="Decline" />
+            <Button fx:id="back_invite" layoutX="415.0" layoutY="393.0" mnemonicParsing="false" onAction="#invite_ButtonAction" prefHeight="61.0" prefWidth="140.0" styleClass="button1" text="Back" />
+            <Button fx:id="exit_invite" layoutX="415.0" layoutY="470.0" mnemonicParsing="false" onAction="#invite_ButtonAction" prefHeight="61.0" prefWidth="140.0" styleClass="button2" text="Exit" />
+            <ImageView fitHeight="106.0" fitWidth="102.0" layoutX="441.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../img/hobbies-and-free-time.png" />
+                  <Image url="@../img/invite.png" />
                </image>
             </ImageView>
-            <Button fx:id="btn_computer" layoutX="292.0" layoutY="142.0" mnemonicParsing="false" onAction="#ButtonAction" prefHeight="86.0" prefWidth="400.0" styleClass="button1" text="Challenge Computer">
+         </children>
+      </AnchorPane>
+      <AnchorPane id="AnchorPane" fx:id="single_player" layoutX="-6.0" prefHeight="622.0" prefWidth="982.0">
+         <children>
+            <Pane fx:id="gameUi" layoutX="7.0" prefHeight="622.0" prefWidth="634.0" style="-fx-background-color: #ffffff;" stylesheets="@../Style/style.css">
+               <children>
+                  <Pane fx:id="game_end" layoutX="91.0" layoutY="71.0" prefHeight="472.0" prefWidth="430.0" styleClass="linear-grd" stylesheets="@../Style/style.css">
+                     <children>
+                        <Label fx:id="gameEnd" layoutX="75.0" layoutY="45.0" prefHeight="70.0" prefWidth="321.0" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="36.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="play_again" layoutX="131.0" layoutY="166.0" mnemonicParsing="false" onAction="#Single_ButtonAction" prefHeight="70.0" prefWidth="168.0" styleClass="button1" text="Play Again">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="gameBack" layoutX="131.0" layoutY="262.0" mnemonicParsing="false" onAction="#Single_ButtonAction" prefHeight="70.0" prefWidth="168.0" styleClass="button2" text="Back" />
+                        <Button fx:id="gameExit" layoutX="132.0" layoutY="348.0" mnemonicParsing="false" onAction="#Single_ButtonAction" prefHeight="70.0" prefWidth="168.0" styleClass="button2" text="Exit" />
+                     </children>
+                  </Pane>
+                  <ImageView fitHeight="604.0" fitWidth="614.0" layoutX="4.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" styleClass="button2">
+                     <image>
+                        <Image url="@../img/board.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="bt1" layoutX="7.0" layoutY="8.0" mnemonicParsing="false" onAction="#Single_ButtonAction" prefHeight="191.0" prefWidth="183.0" style="-fx-background-color: #ffffff;" stylesheets="@../Style/style.css">
+                     <font>
+                         <Font name="System Bold" size="72.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="bt2" layoutX="218.0" layoutY="8.0" mnemonicParsing="false" onAction="#Single_ButtonAction" prefHeight="191.0" prefWidth="174.0" style="-fx-background-color: #ffffff;">
+                     <font>
+                         <Font name="System Bold" size="72.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="bt3" layoutX="420.0" layoutY="8.0" mnemonicParsing="false" onAction="#Single_ButtonAction" prefHeight="191.0" prefWidth="183.0" style="-fx-background-color: #ffffff;">
+                     <font>
+                         <Font name="System Bold" size="72.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="bt4" layoutX="6.0" layoutY="220.0" mnemonicParsing="false" onAction="#Single_ButtonAction" prefHeight="177.0" prefWidth="183.0" style="-fx-background-color: #ffffff;">
+                     <font>
+                         <Font name="System Bold" size="72.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="bt5" layoutX="219.0" layoutY="226.0" mnemonicParsing="false" onAction="#Single_ButtonAction" prefHeight="177.0" prefWidth="174.0" style="-fx-background-color: #ffffff;">
+                     <font>
+                         <Font name="System Bold" size="72.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="bt6" layoutX="418.0" layoutY="221.0" mnemonicParsing="false" onAction="#Single_ButtonAction" prefHeight="177.0" prefWidth="193.0" style="-fx-background-color: #ffffff;">
+                     <font>
+                         <Font name="System Bold" size="72.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="bt7" layoutX="9.0" layoutY="422.0" mnemonicParsing="false" onAction="#Single_ButtonAction" prefHeight="191.0" prefWidth="183.0" style="-fx-background-color: #ffffff;">
+                     <font>
+                         <Font name="System Bold" size="72.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="bt8" layoutX="220.0" layoutY="427.0" mnemonicParsing="false" onAction="#Single_ButtonAction" prefHeight="184.0" prefWidth="168.0" style="-fx-background-color: #ffffff;">
+                     <font>
+                        <Font name="System Bold" size="72.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="bt9" layoutX="415.0" layoutY="425.0" mnemonicParsing="false" onAction="#Single_ButtonAction" prefHeight="184.0" prefWidth="193.0" style="-fx-background-color: #ffffff;">
+                     <font>
+                         <Font name="System Bold" size="72.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane fx:id="userUi" layoutX="636.0" prefHeight="622.0" prefWidth="352.0" styleClass="linear-grd" stylesheets="@../Style/style.css">
+               <children>
+                  <ImageView fitHeight="246.0" fitWidth="225.0" layoutX="75.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/vs2.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="Player1_name" layoutX="62.0" layoutY="25.0" text="Player 1" textFill="#ffffffd1" textOverrun="WORD_ELLIPSIS">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="player1_symbol" layoutX="252.0" layoutY="25.0" text="X" textFill="#ffffffd1" textOverrun="WORD_ELLIPSIS">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Computer" layoutX="59.0" layoutY="386.0" text="Computer" textFill="#ffffffd1" textOverrun="WORD_ELLIPSIS">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Computer_symbol" layoutX="260.0" layoutY="386.0" text="O" textFill="#ffffffd1" textOverrun="WORD_ELLIPSIS">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Computer_score" layoutX="147.0" layoutY="439.0" prefHeight="53.0" prefWidth="59.0" textFill="#ffffffd1" textOverrun="WORD_ELLIPSIS">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="singleExit" layoutX="188.0" layoutY="519.0" mnemonicParsing="false" onAction="#Single_ButtonAction" prefHeight="53.0" prefWidth="136.0" styleClass="button2" text="Exit">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="back" layoutX="30.0" layoutY="519.0" mnemonicParsing="false" onAction="#Single_ButtonAction" prefHeight="53.0" prefWidth="136.0" styleClass="button1" text="Back">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="playerScore" layoutX="135.0" layoutY="78.0" prefHeight="53.0" prefWidth="82.0" textFill="#ffffffd1" textOverrun="WORD_ELLIPSIS">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <Pane prefHeight="628.0" prefWidth="984.0" styleClass="linear-grd" stylesheets="@../Style/style.css">
+         <children>
+            <ImageView fitHeight="638.0" fitWidth="1020.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/shutterstock_gamer.jpg" />
+               </image>
+            </ImageView>
+            <Button fx:id="btn_computer" layoutX="292.0" layoutY="142.0" mnemonicParsing="false" onAction="#MainButtonAction" prefHeight="86.0" prefWidth="400.0" styleClass="button1" text="Challenge Computer">
                <font>
                   <Font name="System Bold" size="36.0" />
                </font>
             </Button>
-            <Button fx:id="btn_player" layoutX="292.0" layoutY="282.0" mnemonicParsing="false" onAction="#ButtonAction" prefHeight="86.0" prefWidth="400.0" styleClass="button2" text="Challenge Player">
+            <Button fx:id="btn_player" layoutX="292.0" layoutY="282.0" mnemonicParsing="false" onAction="#MainButtonAction" prefHeight="86.0" prefWidth="400.0" styleClass="button2" text="Challenge Player">
                <font>
                   <Font name="System Bold" size="36.0" />
                </font>
             </Button>
-            <Button fx:id="exit" layoutX="421.0" layoutY="422.0" mnemonicParsing="false" onAction="#ButtonAction" prefHeight="86.0" prefWidth="142.0" styleClass="button2" text="Exit">
+            <Button fx:id="mainExit" layoutX="421.0" layoutY="422.0" mnemonicParsing="false" onAction="#MainButtonAction" prefHeight="86.0" prefWidth="142.0" styleClass="button2" text="Exit">
                <font>
                   <Font name="System Bold" size="36.0" />
                </font>
             </Button>
+            <ImageView fx:id="playMusic" fitHeight="31.0" fitWidth="41.0" layoutX="72.0" layoutY="16.0" onMouseClicked="#MainMouseAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/icons8_sound_50px.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="pauseMusic" fitHeight="31.0" fitWidth="41.0" layoutX="31.0" layoutY="16.0" onMouseClicked="#MainMouseAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/icons8_mute_32px.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="65.0" fitWidth="87.0" layoutX="14.0" layoutY="549.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/Set-Program-Access-icon.png" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
    </children>
