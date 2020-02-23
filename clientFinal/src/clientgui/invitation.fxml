@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="invitation" prefHeight="613.0" prefWidth="982.0" stylesheets="@../../../../client/src/Style/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientgui.InvitationController">
+   <children>
+      <ImageView fitHeight="695.0" fitWidth="996.0" layoutY="-77.0" opacity="0.95" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/istockphoto-1153341144-170667a.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="invite_text" layoutX="323.0" layoutY="178.0" text="Mohamed Challenges you" textFill="#e4eb5f">
+         <font>
+            <Font name="Lucida Calligraphy Italic" size="26.0" />
+         </font>
+      </Label>
+      <Button fx:id="accept" layoutX="323.0" layoutY="325.0" mnemonicParsing="false" onAction="#invite_ButtonAction" prefHeight="61.0" prefWidth="140.0" styleClass="button2" stylesheets="@../Style/style.css" text="Accept">
+         <effect>
+            <Lighting diffuseConstant="1.46" specularConstant="1.06" specularExponent="24.88" surfaceScale="2.6">
+               <bumpInput>
+                  <Shadow color="#d3a5a5" height="64.54" radius="39.542500000000004" width="95.63" />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="Imprint MT Shadow" size="25.0" />
+         </font></Button>
+      <Button fx:id="decline" layoutX="534.0" layoutY="325.0" mnemonicParsing="false" onAction="#invite_ButtonAction" prefHeight="61.0" prefWidth="140.0" styleClass="button2" stylesheets="@../Style/style.css" text="Decline">
+         <font>
+            <Font name="Imprint MT Shadow" size="25.0" />
+         </font>
+         <effect>
+            <Lighting diffuseConstant="1.34" specularConstant="0.67" specularExponent="10.73" surfaceScale="0.89">
+               <bumpInput>
+                  <Shadow height="98.74" radius="52.7575" width="114.29" />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect></Button>
+      <ImageView fitHeight="106.0" fitWidth="102.0" layoutX="441.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/invite.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="102.0" fitWidth="81.0" layoutX="876.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/5515583_orig.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="93.0" fitWidth="72.0" layoutX="22.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/back-undo-return-button-png-22.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="991.0" fitWidth="984.0" layoutY="-367.0" opacity="0.21" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/a4b69cc0e0d51cbe620b9780beb82363_icon.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
