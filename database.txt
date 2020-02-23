@@ -1,0 +1,9 @@
+Enter postgreSQL database then enter the following : 
+
+Create database game ;
+
+\c game "to enter the database"
+
+Create table users (id SERIAL unique primary key , username text ,password text ,score integer ,status boolean ,play boolean );
+
+Create table games (loc1 text ,loc2 text,loc3 text,loc4 text,loc5 text,loc6 text,loc7 text,loc8 text,loc9 text,user1id  integer user2id integer , state text ,winner int , gameid SERIAL unique primary key);
