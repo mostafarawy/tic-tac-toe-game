@@ -15,7 +15,11 @@ Launch any number you want of clients but keep in mind to sign up first before t
 
 Team Members:
   -Mostafa Mohamed Rashad
+  
   -Ahmed Mostafa Al-sum
+  
   -Mohamed Ibrahim Abd El-Kader
+  
   -Rim Amr
+  
   -Sandy Abd Elrasheed
