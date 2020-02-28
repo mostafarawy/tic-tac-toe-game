@@ -3,10 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package server;
+package serverproject;
 
+import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -14,14 +18,17 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 
 /**
  * FXML Controller class
  *
- * @author Mohamed Ibrahim
+ * @author ahmed
  */
 public class serverController implements Initializable {
 
+    @FXML
+    private Label serverstatus;
     @FXML
     private Button TurnOn;
     @FXML
@@ -30,8 +37,8 @@ public class serverController implements Initializable {
     private ImageView close;
     @FXML
     private TextArea tfuser;
-    @FXML
-    private Label serverstatus;
+    
+    Thread servthread;
 
     /**
      * Initializes the controller class.
@@ -40,24 +47,31 @@ public class serverController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-   
 
     @FXML
-    private void handleMouseEvent(javafx.scene.input.MouseEvent event) {
-        if(event.getSource()==close){
+    private void ButtonAction(ActionEvent e) throws IOException, SQLException{
+        if(e.getSource() == TurnOn){
+            
+            try {
+                new Serverproject();
+                TurnOn.setDisable(true);
+            } catch (IOException ex) {
+                Logger.getLogger(serverController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+          
+        }
+                   
+         if(e.getSource()==TurnOff){
+     
             System.exit(0);
         }
-    }
-    
-    @FXML
-    private void ButtonAction(ActionEvent e) {
-        if(e.getSource()==TurnOn){
-            serverstatus.setText("server is Online");
-        }
         
-        if(e.getSource()==TurnOff){
-            serverstatus.setText("server is Offline");
-        }
+
+    }
+
+    @FXML
+    private void handleMouseEvent(MouseEvent event) {
     }
     
+
 }

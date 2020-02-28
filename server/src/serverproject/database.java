@@ -25,7 +25,7 @@ public class database {
    
     public user register( user us ) throws SQLException {
          Connection conn = null ;
-        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/game","postgres", "1234");
+        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/iti40","postgres", "ahmed");
          PreparedStatement pst;    
          pst = conn.prepareStatement("insert into users (username , password , score,status ,play) values ( ? , ? , 0 ,true ,false ) ;");    
          pst.setString(1 , us.username );
@@ -49,7 +49,7 @@ public class database {
     
      public user login(user us) throws SQLException {
          Connection conn = null ;
-         conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/game","postgres", "1234");
+         conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/iti40","postgres", "ahmed");
          PreparedStatement pst;    
          pst = conn.prepareStatement("select count(id) from users where username like ? and password = ?  ;");    
          pst.setString(1 , us.username);
@@ -84,7 +84,7 @@ public class database {
         }
      public void play(user us) throws SQLException {
         Connection conn = null ;
-        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/game","postgres", "1234");
+        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/iti40","postgres", "ahmed");
         PreparedStatement pst =null;    
        if (us.loc==1){
         pst = conn.prepareStatement("update games set loc1 = ? where gameid = ? ;");  }  
@@ -113,7 +113,7 @@ public class database {
         }
     public void usersignout(user us) throws SQLException {
         Connection conn = null ;
-        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/game","postgres", "1234");
+        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/iti40","postgres", "ahmed");
          PreparedStatement pst;  
              
          pst = conn.prepareStatement("select count(id) from users where id =  ? and play = true  ;");    
@@ -131,7 +131,7 @@ public class database {
         }
      public void userdeclined(user us) throws SQLException {
         Connection conn = null ;
-        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/game","postgres", "1234");
+        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/iti40","postgres", "ahmed");
          PreparedStatement pst;  
              
          pst = conn.prepareStatement("select count(id) from users where id =  ? and play = true  ;");    
@@ -153,7 +153,7 @@ public class database {
      public user checkbef(user us ) throws SQLException{
     boolean  j ;
          Connection conn = null ;
-         conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/game","postgres", "1234");
+         conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/iti40","postgres", "ahmed");
          PreparedStatement pst;   
          pst = conn.prepareStatement("select * from users where  id =? ");    
          pst.setInt(1, us.id2);
@@ -196,7 +196,7 @@ public class database {
         us.vec.clear();
         Connection conn = null ;
          
-         conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/game","postgres", "1234");
+         conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/iti40","postgres", "ahmed");
          PreparedStatement pst;   
          pst = conn.prepareStatement("select * from users where status = true and play = false ");    
          ResultSet rs= pst.executeQuery() ;
@@ -217,7 +217,7 @@ public class database {
     public static user sendall() throws SQLException{
     	user us=new user();
         Connection conn = null ;
-        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/game","postgres", "1234");
+        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/iti40","postgres", "ahmed");
         PreparedStatement pst; 
         pst = conn.prepareStatement("select * from users");    
         ResultSet rs= pst.executeQuery() ;
@@ -307,7 +307,7 @@ public class database {
     */
     public user receiveacceptinvitation (user us) throws SQLException{
          Connection conn = null ;
-         conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/game","postgres", "1234");
+         conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/iti40","postgres", "ahmed");
          PreparedStatement pst;    
          pst = conn.prepareStatement("insert into games (user1id , user2id  ) values (? , ? )  "); 
          pst.setInt(1 , us.id1 );
@@ -328,7 +328,7 @@ public class database {
     }
     public void receivewin(user us) throws SQLException{
          Connection conn = null ;
-         conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/game","postgres", "1234");
+         conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/iti40","postgres", "ahmed");
          PreparedStatement pst;    
          pst = conn.prepareStatement("update games set winner = ? , state= 'finished' where gameid =?  "); 
          pst.setInt(1 , us.id1 );
