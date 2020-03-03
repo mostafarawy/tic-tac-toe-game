@@ -61,7 +61,7 @@
             </StackPane>
             <Pane prefHeight="622.0" prefWidth="488.0" styleClass="linear-grd" stylesheets="@../Style/style.css">
                <children>
-                  <ImageView fitHeight="619.0" fitWidth="679.0" layoutX="-131.0" layoutY="2.0" opacity="0.57" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="619.0" fitWidth="498.0" layoutX="-11.0" layoutY="62.0" opacity="0.58" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../img/hobbies-and-free-time.png" />
                      </image>
@@ -76,15 +76,44 @@
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="ip" layoutX="87.0" layoutY="242.0" prefHeight="48.0" prefWidth="315.0" promptText="IP Address" />
-                  <TextField fx:id="socket" layoutX="87.0" layoutY="318.0" prefHeight="48.0" prefWidth="315.0" promptText="Socket" />
-                  <Label layoutX="130.0" layoutY="192.0" text="Server connection" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="27.0" />
-                     </font>
-                  </Label>
-                  <Button fx:id="connect" layoutX="187.0" layoutY="400.0" mnemonicParsing="false" onAction="#login_regButtonAction" prefHeight="48.0" prefWidth="114.0" styleClass="button2" text="Connect" />
                </children></Pane>
+         </children>
+      </AnchorPane>
+      <AnchorPane id="AnchorPane" fx:id="invitation" layoutX="1.0" layoutY="4.0" prefHeight="622.0" prefWidth="982.0" stylesheets="@../Style/style.css">
+         <children>
+            <Pane prefHeight="628.0" prefWidth="984.0" styleClass="linear-grd" />
+            <Pane layoutX="-1.0" layoutY="-4.0" prefHeight="622.0" prefWidth="288.0" styleClass="linear-grd" stylesheets="@../Style/style.css">
+               <children>
+                  <ImageView fitHeight="312.0" fitWidth="244.0" layoutX="22.0" layoutY="187.0" opacity="0.45" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/hobbies-and-free-time.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="694.0" prefHeight="622.0" prefWidth="288.0" styleClass="linear-grd" stylesheets="@../Style/style.css">
+               <children>
+                  <ImageView fitHeight="312.0" fitWidth="244.0" layoutX="25.0" layoutY="193.0" opacity="0.45" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/hobbies-and-free-time.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Label fx:id="invite_text" layoutX="345.0" layoutY="150.0" text="Mohamed Challenges you" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Button fx:id="accept" layoutX="345.0" layoutY="264.0" mnemonicParsing="false" onAction="#invite_ButtonAction" prefHeight="61.0" prefWidth="140.0" styleClass="button1" text="Accept" />
+            <Button fx:id="decline" layoutX="498.0" layoutY="264.0" mnemonicParsing="false" onAction="#invite_ButtonAction" prefHeight="61.0" prefWidth="140.0" styleClass="button2" text="Decline" />
+            <Button fx:id="back_invite" layoutX="415.0" layoutY="393.0" mnemonicParsing="false" onAction="#invite_ButtonAction" prefHeight="61.0" prefWidth="140.0" styleClass="button1" text="Back" />
+            <Button fx:id="exit_invite" layoutX="415.0" layoutY="470.0" mnemonicParsing="false" onAction="#invite_ButtonAction" prefHeight="61.0" prefWidth="140.0" styleClass="button2" text="Exit" />
+            <ImageView fitHeight="106.0" fitWidth="102.0" layoutX="441.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/invite.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
       <AnchorPane id="AnchorPane" fx:id="online_user" layoutX="-2.0" layoutY="2.0" prefHeight="622.0" prefWidth="982.0">
@@ -301,42 +330,6 @@
                   <Button fx:id="chat_btn" layoutX="251.0" layoutY="580.0" mnemonicParsing="false" onAction="#multi_ButtonAction" prefHeight="31.0" prefWidth="73.0" styleClass="button1" text="Send" />
                </children>
             </Pane>
-         </children>
-      </AnchorPane>
-      <AnchorPane id="AnchorPane" fx:id="invitation" layoutX="1.0" layoutY="4.0" prefHeight="622.0" prefWidth="982.0" stylesheets="@../Style/style.css">
-         <children>
-            <Pane layoutX="-1.0" layoutY="-4.0" prefHeight="622.0" prefWidth="288.0" styleClass="linear-grd" stylesheets="@../Style/style.css">
-               <children>
-                  <ImageView fitHeight="312.0" fitWidth="244.0" layoutX="22.0" layoutY="187.0" opacity="0.45" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../img/hobbies-and-free-time.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </Pane>
-            <Pane layoutX="694.0" prefHeight="622.0" prefWidth="288.0" styleClass="linear-grd" stylesheets="@../Style/style.css">
-               <children>
-                  <ImageView fitHeight="312.0" fitWidth="244.0" layoutX="25.0" layoutY="193.0" opacity="0.45" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../img/hobbies-and-free-time.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </Pane>
-            <Label fx:id="invite_text" layoutX="345.0" layoutY="150.0" text="Mohamed Challenges you">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Label>
-            <Button fx:id="accept" layoutX="345.0" layoutY="264.0" mnemonicParsing="false" onAction="#invite_ButtonAction" prefHeight="61.0" prefWidth="140.0" styleClass="button1" text="Accept" />
-            <Button fx:id="decline" layoutX="498.0" layoutY="264.0" mnemonicParsing="false" onAction="#invite_ButtonAction" prefHeight="61.0" prefWidth="140.0" styleClass="button2" text="Decline" />
-            <Button fx:id="back_invite" layoutX="415.0" layoutY="393.0" mnemonicParsing="false" onAction="#invite_ButtonAction" prefHeight="61.0" prefWidth="140.0" styleClass="button1" text="Back" />
-            <Button fx:id="exit_invite" layoutX="415.0" layoutY="470.0" mnemonicParsing="false" onAction="#invite_ButtonAction" prefHeight="61.0" prefWidth="140.0" styleClass="button2" text="Exit" />
-            <ImageView fitHeight="106.0" fitWidth="102.0" layoutX="441.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../img/invite.png" />
-               </image>
-            </ImageView>
          </children>
       </AnchorPane>
       <AnchorPane id="AnchorPane" fx:id="single_player" layoutX="-6.0" prefHeight="622.0" prefWidth="982.0">
