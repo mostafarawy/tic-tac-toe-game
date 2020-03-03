@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="single_player" prefHeight="613.0" prefWidth="982.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientgui.Single_playerController">
+   <children>
+      <Pane fx:id="gameUi" layoutX="7.0" prefHeight="613.0" prefWidth="625.0" style="-fx-background-color: #ffffff;" stylesheets="@../Style/style.css">
+         <children>
+            <Pane fx:id="game_end" layoutX="91.0" layoutY="71.0" prefHeight="472.0" prefWidth="430.0" stylesheets="@../Style/style.css">
+               <children>
+                  <Label fx:id="gameEnd" layoutX="55.0" layoutY="43.0" prefHeight="70.0" prefWidth="321.0" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="play_again" layoutX="131.0" layoutY="166.0" mnemonicParsing="false" onAction="#Single_ButtonAction" prefHeight="70.0" prefWidth="168.0" styleClass="button1" text="Play Again">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="gameBack" layoutX="131.0" layoutY="259.0" mnemonicParsing="false" onAction="#Single_ButtonAction" prefHeight="70.0" prefWidth="168.0" styleClass="button2" text="Back" />
+                  <Button fx:id="gameExit" layoutX="132.0" layoutY="348.0" mnemonicParsing="false" onAction="#Single_ButtonAction" prefHeight="70.0" prefWidth="168.0" styleClass="button2" text="Exit" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <styleClass>
+                  <String fx:value="linear-grd" />
+                  <String fx:value="border-radius" />
+               </styleClass>
+            </Pane>
+            <ImageView fitHeight="778.0" fitWidth="650.0" layoutX="-10.0" layoutY="-156.0" pickOnBounds="true" preserveRatio="true" styleClass="button2">
+               <image>
+                  <Image url="@../img/Capture2.PNG" />
+               </image>
+            </ImageView>
+            <Button fx:id="bt1" layoutX="55.0" layoutY="35.0" mnemonicParsing="false" onAction="#Single_ButtonAction" prefHeight="164.0" prefWidth="146.0" style="-fx-background-color: #ffffff;" stylesheets="@../Style/style.css" textFill="#2540a1">
+               <font>
+                  <Font name="System Bold" size="72.0" />
+               </font>
+            </Button>
+            <Button fx:id="bt2" layoutX="235.0" layoutY="35.0" mnemonicParsing="false" onAction="#Single_ButtonAction" prefHeight="164.0" prefWidth="155.0" style="-fx-background-color: #ffffff;">
+               <font>
+                   <Font name="System Bold" size="72.0" />
+               </font>
+            </Button>
+            <Button fx:id="bt3" layoutX="420.0" layoutY="43.0" mnemonicParsing="false" onAction="#Single_ButtonAction" prefHeight="156.0" prefWidth="155.0" style="-fx-background-color: #ffffff;">
+               <font>
+                  <Font name="System Bold" size="72.0" />
+               </font>
+            </Button>
+            <Button fx:id="bt4" layoutX="48.0" layoutY="225.0" mnemonicParsing="false" onAction="#Single_ButtonAction" prefHeight="164.0" prefWidth="155.0" style="-fx-background-color: #ffffff;">
+               <font>
+                   <Font name="System Bold" size="72.0" />
+               </font>
+            </Button>
+            <Button fx:id="bt5" layoutX="229.0" layoutY="221.0" mnemonicParsing="false" onAction="#Single_ButtonAction" prefHeight="164.0" prefWidth="168.0" style="-fx-background-color: #ffffff;">
+               <font>
+                  <Font name="System Bold" size="72.0" />
+               </font>
+            </Button>
+            <Button fx:id="bt6" layoutX="418.0" layoutY="221.0" mnemonicParsing="false" onAction="#Single_ButtonAction" prefHeight="164.0" prefWidth="155.0" style="-fx-background-color: #ffffff;">
+               <font>
+                   <Font name="System Bold" size="72.0" />
+               </font>
+            </Button>
+            <Button fx:id="bt7" layoutX="46.0" layoutY="409.0" mnemonicParsing="false" onAction="#Single_ButtonAction" prefHeight="164.0" prefWidth="155.0" style="-fx-background-color: #ffffff;">
+               <font>
+                   <Font name="System Bold" size="72.0" />
+               </font>
+            </Button>
+            <Button fx:id="bt8" layoutX="233.0" layoutY="409.0" mnemonicParsing="false" onAction="#Single_ButtonAction" prefHeight="164.0" prefWidth="146.0" style="-fx-background-color: #ffffff;">
+               <font>
+                   <Font name="System Bold" size="72.0" />
+               </font>
+            </Button>
+            <Button fx:id="bt9" layoutX="420.0" layoutY="409.0" mnemonicParsing="false" onAction="#Single_ButtonAction" prefHeight="164.0" prefWidth="155.0" style="-fx-background-color: #ffffff;">
+               <font>
+                   <Font name="System Bold" size="72.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane fx:id="userUi" layoutX="631.0" prefHeight="613.0" prefWidth="352.0" styleClass="linear-grd" stylesheets="@../Style/style.css">
+         <children>
+            <ImageView fitHeight="246.0" fitWidth="225.0" layoutX="75.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/vs2.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="Player1_name" layoutX="49.0" layoutY="25.0" text="Player 1" textFill="#ffffffd1" textOverrun="WORD_ELLIPSIS">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+            <Label fx:id="player1_symbol" layoutX="252.0" layoutY="25.0" text="X" textFill="#ffffffd1" textOverrun="WORD_ELLIPSIS">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+            <Label fx:id="Computer" layoutX="59.0" layoutY="386.0" text="Computer" textFill="#ffffffd1" textOverrun="WORD_ELLIPSIS">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+            <Label fx:id="Computer_symbol" layoutX="260.0" layoutY="386.0" text="O" textFill="#ffffffd1" textOverrun="WORD_ELLIPSIS">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+            <Label fx:id="Computer_score" layoutX="166.0" layoutY="439.0" prefHeight="53.0" prefWidth="62.0" text="0" textFill="#ffffffd1" textOverrun="WORD_ELLIPSIS">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+            <Button fx:id="singleExit" layoutX="188.0" layoutY="519.0" mnemonicParsing="false" onAction="#Single_ButtonAction" prefHeight="53.0" prefWidth="136.0" styleClass="button3" stylesheets="@../Style/style.css" text="Exit">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <effect>
+                  <Lighting diffuseConstant="1.34" specularConstant="0.15" specularExponent="26.83" surfaceScale="4.67">
+                     <bumpInput>
+                        <Shadow color="#902c2c" height="30.33" radius="20.1075" width="52.1" />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant color="#f5f5f5" />
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+            <Button fx:id="back" layoutX="30.0" layoutY="519.0" mnemonicParsing="false" onAction="#Single_ButtonAction" prefHeight="53.0" prefWidth="136.0" styleClass="button3" text="Back">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <effect>
+                  <Lighting diffuseConstant="1.22" specularConstant="0.18" specularExponent="27.8" surfaceScale="4.18">
+                     <bumpInput>
+                        <Shadow height="45.09" radius="26.1275" width="61.42" />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+            <Label fx:id="playerScore" layoutX="115.0" layoutY="74.0" textFill="#ffffffd1" textOverrun="WORD_ELLIPSIS">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -31,7 +31,6 @@ public class main extends Application {
         public  int scoreb ;
         user us = new user() ;
         public  int x ;
-        public String myname ;
         public  int y ;
         Gson jo= new Gson ();
         
@@ -40,14 +39,16 @@ public class main extends Application {
        
         Client u= new Client() ;
         FXMLLoader main=new FXMLLoader();
+//        FXMLLoader SplashScreen=new FXMLLoader();
         main.setLocation(getClass().getResource("main.fxml"));
+//        SplashScreen.setLocation(getClass().getResource("SplashScreen.fxml"));
         Parent root=main.load();
         MainController FS=main.getController();
         Scene scene = new Scene(root);
         stage.setTitle("Tic Tac Toe Game");
         stage.setScene(scene);
         stage.show();
- 
+        
         new Thread(new Runnable() {
             @Override
             @SuppressWarnings("empty-statement")
@@ -56,20 +57,20 @@ public class main extends Application {
                 while(true)
                     
                 {   try {
-         {  String s = u.dis.readLine();
-            us = jo.fromJson(s, user.class);
+                     {String s = u.dis.readLine();
+        us = jo.fromJson(s, user.class);
               FS.set(us);
           switch(us.action){
          case "serversendlogin":
            if (us.state==false){FS.test(false);}
         else{  x = us.id1  ;
            scoreb = us.score ; 
-          myname = us.username ;
+          
         Platform.runLater(new Runnable() {
         @Override public void run() {
             FS.setinv(us);
-            
-            
+            FS.setmyscore(scoreb);
+           
             FS.online();
         System.out.println(us.state);}});}
         break ;
@@ -78,23 +79,27 @@ public class main extends Application {
        
          {     x= us.id1  ;
               scoreb =us.score ;
-              myname = us.username ;
               Platform.runLater(new Runnable() {
             @Override public void run() {
-                  
+                FS.setmyscore(scoreb);   
                 FS.online();
                    System.out.println(us.state);}});}
                  break ;
         
         case "serveracceptinvitation":
              System.out.println(us.action);
-          FS.resetgame();
+            
+            
+            FS.resetgame();
+           
+           
      {    Platform.runLater(new Runnable() {
          @Override public void run() {
             System.out.println("inv acccepted");
             System.out.println(us.action);
-            FS.gameend();
-            FS.log();
+              
+             FS.gameend();
+               FS.log();
             System.out.println(us.action);
             }});}
              break ;
@@ -107,6 +112,7 @@ public class main extends Application {
             System.out.println("received play");
             FS.log();
             FS.buttonaction(us);
+          // 
           }});}
        break ; 
      
@@ -129,21 +135,22 @@ public class main extends Application {
            System.out.println(us.id2); 
            System.out.println(us.state);}});  }     
             break ;
-      
         case "serversendpause":
              {  System.out.println(us.id2);
     Platform.runLater(new Runnable() {
         @Override public void run() 
-        {  FS.receivepause();
+        {   
+            FS.receivepause();
+            
            System.out.println(us.state);}});  }     
             break ;
-            
         case "serversendresume":
              {  System.out.println(us.id2);
     Platform.runLater(new Runnable() {
         @Override public void run() 
-        { 
+        {   
             FS.receiveresume();
+            
            System.out.println(us.state);}});  }     
             break ; 
              case "noti":       
@@ -152,21 +159,22 @@ public class main extends Application {
         {  FS.shownoti(us);
            System.out.println(us.state);}});       
             break ;
-    
-     case "serverdeclineinvitation":       
+            
+            
+        case "serverdeclineinvitation":       
      Platform.runLater(new Runnable() {
         @Override public void run() 
-        {  
-        FS.sendupd();
+        {  FS.sendupd();
+        
         FS.gameend();
-        FS.setinv(us);
+       FS.setinv(us);
         FS.online();
            System.out.println(us.state);}});       
             break ;
     
         case "serversendwin":       
   
-        Platform.runLater(new Runnable() {
+            Platform.runLater(new Runnable() {
         @Override public void run() 
         {  
            FS.resetgame();
@@ -183,10 +191,13 @@ public class main extends Application {
            
            System.out.println(us.state);}});       
             break ; 
-     
         case "serversendcancel" :
-    
-          Platform.runLater(new Runnable() {
+          
+//            us.action="usersendupdate" ;
+//            String str = jo.toJson(us, user.class) ;
+//            Client.ps.println(str);
+           
+      Platform.runLater(new Runnable() {
         @Override public void run() 
         {  
             FS.sendupd();
@@ -195,12 +206,11 @@ public class main extends Application {
            FS.online();
            System.out.println(us.state);}});       
             break ; 
-         
-        case "serversendchat":   
+          case "serversendchat":   
            
          Platform.runLater(new Runnable() {
         @Override public void run() 
-        {   FS.setchat(us);
+        {    FS.setchat(us);
            
             System.out.println(us.state);}});
             break ; 
@@ -234,8 +244,8 @@ class Client
         public Client()
         {
             try{
-     //       mySocket = new Socket ("10.145.3.91", 5008);
             mySocket = new Socket ("127.0.0.1", 5008);
+//            mySocket = new Socket ("127.0.0.1", 5008);
             dis = new DataInputStream(mySocket.getInputStream());
             ps = new PrintStream(mySocket.getOutputStream());   
             
